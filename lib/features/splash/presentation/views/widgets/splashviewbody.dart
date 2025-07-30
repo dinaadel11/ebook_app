@@ -20,25 +20,25 @@ class _SplashViewBodyState extends State<SplashViewBody>
   @override
   void initState() {
     super.initState();
-    initslidAnimation();
+    // initslidAnimation();
     Navigatetohome();
   }
 
-  void initslidAnimation() {
-    animationController = AnimationController(
-      vsync: this,
-      duration: const Duration(seconds: 1),
-    );
-    slidAnimation = Tween<Offset>(begin: Offset(0, 2), end: Offset.zero)
-        .animate(animationController);
-    animationController.forward();
-    slidAnimation.addListener(() {
-      setState(() {});
-    });
-  }
+  // void initslidAnimation() {
+  //   animationController = AnimationController(
+  //     vsync: this,
+  //     duration: const Duration(seconds: 1),
+  //   );
+  //   slidAnimation = Tween<Offset>(begin: Offset(0, 2), end: Offset.zero)
+  //       .animate(animationController);
+  //   animationController.forward();
+  //   slidAnimation.addListener(() {
+  //     setState(() {});
+  //   });
+  // }
 
   void Navigatetohome() {
-    Future.delayed(const Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 2), () {
       Get.to(() => const HomeView(),
           transition: Transition.fade, duration: kTransitionduration);
     });
