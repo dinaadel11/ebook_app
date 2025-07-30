@@ -20,7 +20,7 @@ class BoolyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'Bookly App',
-      theme: ThemeData().copyWith(scaffoldBackgroundColor: kyprimarycolor),
+      theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: kyprimarycolor),
       debugShowCheckedModeBanner: false,
       home: SplashView(),
     );
