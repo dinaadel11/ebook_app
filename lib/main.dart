@@ -10,12 +10,12 @@ import 'features/splash/presentation/views/splash_view.dart';
 void main() => runApp(
       DevicePreview(
         enabled: !kReleaseMode,
-        builder: (context) => BoolyApp(), // Wrap your app
+        builder: (context) => const BooklyApp(), // Wrap your app
       ),
     );
 
-class BoolyApp extends StatelessWidget {
-  const BoolyApp({super.key});
+class BooklyApp extends StatelessWidget {
+  const BooklyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class BoolyApp extends StatelessWidget {
         textTheme: GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme),
       ),
       debugShowCheckedModeBanner: false,
-      home: SplashView(),
+      home: const SplashView(),
     );
   }
 }
