@@ -8,10 +8,14 @@ class FutereListViewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return AspectRatio(
       aspectRatio: 2.7 / 4,
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(17),
-          image: const DecorationImage(image: AssetImage(AssetsData.test)),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 8),
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.red,
+            borderRadius: BorderRadius.circular(17),
+            image: const DecorationImage(image: AssetImage(AssetsData.test)),
+          ),
         ),
       ),
     );
