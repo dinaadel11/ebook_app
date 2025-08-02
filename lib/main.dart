@@ -1,14 +1,9 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-
 import 'package:google_fonts/google_fonts.dart';
 import 'package:newsapp/constant.dart';
 import 'package:newsapp/core/utils/app_router.dart';
-import 'package:newsapp/features/home/presentation/views/home_view.dart';
-
-import 'features/splash/presentation/views/splash_view.dart';
 
 void main() => runApp(
       DevicePreview(

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:newsapp/core/utils/assets.dart';
 
-class FutereListViewItem extends StatelessWidget {
-  const FutereListViewItem({super.key});
+class CustomBookImage extends StatelessWidget {
+  const CustomBookImage({super.key});
 
   @override
   Widget build(BuildContext context) {
