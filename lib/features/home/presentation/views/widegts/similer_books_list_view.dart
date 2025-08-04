@@ -17,6 +17,5 @@ class SimilerBooksListView extends StatelessWidget {
             );
           }),
     );
-    ;
   }
 }
