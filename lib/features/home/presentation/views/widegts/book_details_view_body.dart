@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:newsapp/core/widget/custom_button.dart';
+import 'package:newsapp/core/utils/styles.dart';
+
 import 'package:newsapp/features/home/presentation/views/widegts/book_rating.dart';
+import 'package:newsapp/features/home/presentation/views/widegts/similer_books_list_view.dart';
 import 'books_action.dart';
 import 'custom_book_details_app_bar.dart';
 import 'custom_book_item.dart';
@@ -42,15 +44,32 @@ class BookDetailsViewBody extends StatelessWidget {
             maxLines: 2,
           ),
           const SizedBox(
-            height: 18,
+            height: 13,
           ),
           const BookRating(
             mainAxisAlignment: MainAxisAlignment.center,
           ),
           const SizedBox(
-            height: 37,
+            height: 13,
           ),
           BooksAction(),
+          const SizedBox(
+            height: 18,
+          ),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              'You can also like',
+              style: Styles.textstyle14.copyWith(fontWeight: FontWeight.w600),
+            ),
+          ),
+          SizedBox(
+            height: 18,
+          ),
+          SimilerBooksListView(),
+          SizedBox(
+            height: 40,
+          ),
         ],
       ),
     );

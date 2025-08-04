@@ -24,7 +24,7 @@ class CustomButton extends StatelessWidget {
               borderRadius: borderRadius ?? BorderRadius.circular(16),
             )),
         child: Text(
-          '19.99',
+          text,
           style: Styles.textstyle16
               .copyWith(color: textcolor, fontWeight: FontWeight.w900),
         ),
