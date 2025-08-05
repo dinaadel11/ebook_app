@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:newsapp/features/home/presentation/views/widegts/best_seller_list_view_item.dart';
 
@@ -16,6 +15,5 @@ class SearchResultListView extends StatelessWidget {
             child: BestSellerListViewItem(),
           );
         });
-    ;
   }
 }
