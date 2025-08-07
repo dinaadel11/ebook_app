@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:newsapp/core/utils/assets.dart';
 import 'package:newsapp/core/utils/styles.dart';
 import 'package:newsapp/features/home/data/models/book_model/book_model.dart';
 import 'package:newsapp/features/home/presentation/views/widegts/book_rating.dart';
@@ -21,7 +20,7 @@ class BestSellerListViewItem extends StatelessWidget {
         child: Row(
           children: [
             CustomBookImage(
-                imageUrl: (bookModel.volumeInfo.imageLinks!.thumbnail)),
+                imageUrl: (bookModel.volumeInfo.imageLinks?.thumbnail ?? ' ')),
             const SizedBox(
               width: 30,
             ),
