@@ -3,11 +3,13 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:newsapp/core/utils/assets.dart';
 import 'package:newsapp/core/utils/styles.dart';
+import 'package:newsapp/features/home/data/models/book_model/book_model.dart';
 import 'package:newsapp/features/home/presentation/views/widegts/book_rating.dart';
+import 'package:newsapp/features/home/presentation/views/widegts/custom_book_item.dart';
 
 class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({super.key});
-
+  const BestSellerListViewItem({super.key, required this.bookModel});
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -18,17 +20,8 @@ class BestSellerListViewItem extends StatelessWidget {
         height: 150,
         child: Row(
           children: [
-            AspectRatio(
-              aspectRatio: 3 / 4,
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.red,
-                  borderRadius: BorderRadius.circular(8),
-                  image:
-                      const DecorationImage(image: AssetImage(AssetsData.test)),
-                ),
-              ),
-            ),
+            CustomBookImage(
+                imageUrl: (bookModel.volumeInfo.imageLinks!.thumbnail)),
             const SizedBox(
               width: 30,
             ),
@@ -39,7 +32,7 @@ class BestSellerListViewItem extends StatelessWidget {
                   SizedBox(
                     width: MediaQuery.of(context).size.width * .5,
                     child: Text(
-                      'Harry Potter and the Globlet of Fire',
+                      bookModel.volumeInfo.title ?? 'Harry Botter',
                       style: GoogleFonts.ebGaramond(
                           fontSize: 20, fontWeight: FontWeight.normal),
                       maxLines: 2,
@@ -49,22 +42,25 @@ class BestSellerListViewItem extends StatelessWidget {
                     height: 3,
                   ),
                   Text(
-                    'J.K.Rowling',
-                    style:
-                        Styles.textstyle14.copyWith(color: Color(0xff707070)),
+                    (bookModel.volumeInfo.authors?[0]) ?? 'Harry boter',
+                    style: Styles.textstyle14
+                        .copyWith(color: const Color(0xff707070)),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 3,
                   ),
                   Row(
                     children: [
                       Text(
-                        '19.99 ',
-                        style: Styles.textstyle20
+                        'Free',
+                        style: Styles.textstyle14
                             .copyWith(fontWeight: FontWeight.bold),
                       ),
-                      Spacer(),
-                      BookRating(),
+                      const Spacer(),
+                      BookRating(
+                        rating: bookModel.volumeInfo.averageRating ?? 0,
+                        count: bookModel.volumeInfo.pageCount ?? 0,
+                      ),
                     ],
                   ),
                 ],

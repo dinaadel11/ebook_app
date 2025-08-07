@@ -4,8 +4,13 @@ import 'package:newsapp/core/utils/styles.dart';
 
 class BookRating extends StatelessWidget {
   const BookRating(
-      {super.key, this.mainAxisAlignment = MainAxisAlignment.start});
+      {super.key,
+      this.mainAxisAlignment = MainAxisAlignment.start,
+      required this.rating,
+      required this.count});
   final MainAxisAlignment mainAxisAlignment;
+  final num rating;
+  final int count;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -18,15 +23,15 @@ class BookRating extends StatelessWidget {
         const SizedBox(
           width: 10,
         ),
-        const Text(
-          '4.2',
+        Text(
+          rating.toString(),
           style: Styles.textstyle16,
         ),
         const SizedBox(
           width: 5,
         ),
         Text(
-          '(245)',
+          '($count)',
           style: Styles.textstyle14.copyWith(color: Color(0xff707070)),
         ),
       ],

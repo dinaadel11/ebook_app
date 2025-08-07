@@ -22,8 +22,10 @@ class FeaturedBooksListView extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
                   return CustomBookImage(
-                      imageUrl:
-                          state.books[index].volumeInfo.imageLinks!.thumbnail);
+                      imageUrl: state
+                          .books[index].volumeInfo.imageLinks!.smallThumbnail
+                      // 'https://m.media-amazon.com/images/I/81q77Q39nEL.jpg'
+                      );
                 }),
           );
         } else if (state is FeaturedBooksFailuer) {
